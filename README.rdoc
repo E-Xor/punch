@@ -1,0 +1,27 @@
+== Punch
+
+Time clock machine application.
+
+=== Disclaimer
+
+As of now application assumes you never skip clock-in/out when you come/leave. If you forget to clock in/out it leads to too many work hours in report. It will look suspicios for your manager.
+
+=== Requirements
+
+1. MySQL
+2. You can run it as `rails s`, otherwise you need Apache/Nginx + Passanger/Unicorn
+
+=== Installation
+
+  git clone https://github.com/E-Xor/punch
+  cd punch
+  bundle isntall
+  bundle exec rake db:create
+  bundle exec rake db:migrate
+  bundle exec rake db:seed
+
+=== Run
+
+  rails s
+
+Or any other way you like it.
