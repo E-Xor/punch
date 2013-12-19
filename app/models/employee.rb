@@ -8,7 +8,7 @@ class Employee < ActiveRecord::Base
   end
 
   def seven_days_hours
-    work_hours(7.days.ago.beginning_of_day, true)
+    work_hours(7.days.ago.beginning_of_day)
   end
 
   def is_admin?
@@ -30,12 +30,6 @@ class Employee < ActiveRecord::Base
     mm, ss = total.divmod(60)
     hh, mm = mm.divmod(60)
 
-    r =  "%02d:%02d:%02d" % [hh, mm, ss]
-    if include_days
-      dd, hh = hh.divmod(24)
-      r = "%d day(s), %02d:%02d:%02d" % [dd, hh, mm, ss] # Probably move to the view
-    end
-
-    r
+    "%02d:%02d:%02d" % [hh, mm, ss]
   end
 end

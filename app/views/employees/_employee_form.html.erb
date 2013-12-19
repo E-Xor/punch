@@ -1,0 +1,23 @@
+<%= form_for @employee, url: {action: "create"}, html: {class: "punch-border", id: 'employeeForm'} do |f| %>
+    <label for="employeeCardId" class="punch-label">Emploee Card ID</label>
+    <input id="employeeCardId" name="employeeCardId" placeholder="Employee Card ID" class="punch-text-input" required/>
+    
+    <label for="firstName" class="punch-label">First Name</label>
+    <input id="firstName" name="firstName" placeholder="First Name" class="punch-text-input" required/>
+    
+    <label for="lastName" class="punch-label">Last Name</label>
+    <input id="lastName" name="lastName" placeholder="Last Name" class="punch-text-input" required/>
+    
+    <label for="isAdmin" class="punch-label">Adminstrator?</label>
+    <input type="checkbox" id="isAdmin" name="isAdmin" class="punch-checkbox"/>
+
+    <div class="punch-button-area">
+        <button type="submit" id="createEmployeeCard" class="punch-button">Create Employee Card</button>
+    </div>
+
+    <% if flash[:alert] %>
+       <p class="punch-error"><%= flash[:alert] %></p>
+    <% end %>
+
+<% end %>
+

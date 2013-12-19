@@ -1,0 +1,16 @@
+<table class="punch-table">
+  <thead>
+    <tr><th>Employee ID</th><th>First Name</th><th>Last Name</th><th>Admin?</th><th>Delete</th></tr>
+  </thead>
+  <tbody>
+    <% @all_employees.each do |e| %>
+      <tr>
+        <td><%= e.employee_card_id %></td>
+        <td><%= e.first_name %></td>
+        <td><%= e.last_name %></td>
+        <td><%= e.is_admin ? 'yes' : 'no' %></td>
+        <td><%= image_tag "trashcan.png" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

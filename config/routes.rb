@@ -1,5 +1,6 @@
 Punch::Application.routes.draw do
-  # resources :employees
+  resources :employees, only: [:index, :create, :destroy]
+
   resources :clocks, only: [:new, :create]
   get 'report', to: 'clocks#report'
 
