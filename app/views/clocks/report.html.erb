@@ -2,16 +2,16 @@
   <p class="punch-text">Hi, <%= @employee.first_name %> <%= @employee.last_name %>. During last 7 days you worked: <%= @employee.seven_days_hours %>.</p>
 </div>
 
-  <table class="punch-table">
-    <thead>
-      <tr><th>Action</th><th>When</th></tr>
-    </thead>
-    <tbody>
-      <% @employee.seven_days_records.each do |r| %>
-        <tr>
-          <td><%= r.clocked_in ? 'In' : 'Out' %></td>
-          <td><%= r.created_at.localtime.strftime('%c') %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<table class="punch-table">
+  <thead>
+    <tr><th>Action</th><th>When</th></tr>
+  </thead>
+  <tbody>
+    <% @employee.seven_days_records.each do |r| %>
+      <tr>
+        <td><%= r.clocked_in ? 'In' : 'Out' %></td>
+        <td><%= r.created_at.localtime.strftime('%c') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<% if @employee.is_admin? %>
+
+  <table class="punch-table">
+    <thead>
+      <tr><th>Employee ID</th><th>First Name</th><th>Last Name</th><th>Last 7 days</th><th>Current State</th><th>Last change</th></tr>
+    </thead>
+    <tbody>
+      <% @all_other_employees.each do |e| %>
+        <% last_clock_record = e.clock_records.last %>
+        <tr>
+          <td><%= e.employee_card_id %></td>
+          <td><%= e.first_name %></td>
+          <td><%= e.last_name %></td>
+          <td><%= e.seven_days_hours %></td>
+          <td><%= last_clock_record.clocked_in ? 'In' : 'Out' %></td>
+          <td><%= last_clock_record.created_at.localtime.strftime('%c') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
