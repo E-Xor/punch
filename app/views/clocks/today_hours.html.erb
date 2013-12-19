@@ -3,9 +3,21 @@
 </div>
 
 <% if @employee.is_admin? %>
-  <div class="punch-border" id="usersArea">
-    <% @all_employees.each do |e| %>
-      <%= e.first_name %> | <%= e.last_name %> | <%= e.seven_days_hours %>
-    <% end %>
-  </div>
+
+  <table class="punch-table">
+    <thead>
+      <tr><th>Employee ID</th><th>First Name</th><th>Last Name</th><th>Last 7 days hours</th></tr>
+    </thead>
+    <tbody>
+      <% @all_employees.each do |e| %>
+        <tr>
+          <td><%= e.employee_card_id %></td>
+          <td><%= e.first_name %></td>
+          <td><%= e.last_name %></td>
+          <td><%= e.seven_days_hours %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% end %>

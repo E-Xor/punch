@@ -73,3 +73,32 @@ body {
       color: #a94442;  
 }
 
+.punch-table {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px auto;
+    border-spacing: 0;
+}
+
+.punch-table>thead>tr>th {
+    vertical-align: bottom;
+    padding: 10px 15px 0 5px;
+    border-bottom: 2px solid #ddd;
+}
+.punch-table>tbody>tr>td {
+    padding: 10px 15px 10px 5px;
+    border-top: 1px solid #ddd;
+}
+
+.punch-table>tbody>tr:hover {
+  background-color: #efefef;
+}
+
+.punch-table>tbody>tr>td>img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
