@@ -1,0 +1,9 @@
+<div class="punch-border" id="clockArea">
+  <p class="punch-text">Enter ID from your Emploee Card and press 'Clock In/Out' to clock in or out. Press 'Report' button if you just want to see your work hours without clocking in/out.<br/><br/>If you forget to clock in/out it leads to too many work hours in report. It will look suspicios for your manager.<p>
+
+  <%= render 'clock_form' %>
+
+  <% if flash[:alert] %>
+    <p class="punch-error">Error happend trying to clock you in/out. Please check your <b>Employee Card ID</b> or talk to support</p>
+  <% end %>
+</div>

@@ -34,5 +34,4 @@ Punch::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = false
-  config.assets.logger = nil
 end

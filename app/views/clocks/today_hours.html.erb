@@ -1,0 +1,3 @@
+<div class="punch-border" id="clockArea">
+  <p class="punch-text"><%= @clock_record.clocked_in ? 'Hi' : 'Bye' %>, <%= @employee.first_name %> <%= @employee.last_name %>. You'successfully clocked <%= @clock_record.clocked_in ? 'in' : 'out' %>. Today you worked: <%= @employee.today_hours %>.</p>
+</div>

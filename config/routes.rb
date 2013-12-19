@@ -1,8 +1,6 @@
 Punch::Application.routes.draw do
   # resources :employees
+  resources :clocks, only: [:new, :create]
 
-  get 'entrance' => 'clocks#entrance'
-  post 'inout' => 'clocks#inout'
-
-  root :to => 'clocks#entrance'
+  root :to => 'clocks#new'
 end
