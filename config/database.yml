@@ -8,12 +8,12 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: hwt
+  database: punch_dev
 
 production:
   <<: *defaults
-  database: hwt_prod
+  database: punch_prod
 
 test:
   <<: *defaults
-  database: hwt_test
+  database: punch_test
