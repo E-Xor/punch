@@ -8,5 +8,7 @@ class CreateEmployeesTable < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :employees, :employee_card_id, unique: true
   end
 end

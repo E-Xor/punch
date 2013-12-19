@@ -29,4 +29,6 @@ ActiveRecord::Schema.define(:version => 20131219014031) do
     t.datetime "updated_at",       :null => false
   end
 
+  add_index "employees", ["employee_card_id"], :name => "index_employees_on_employee_card_id", :unique => true
+
 end
