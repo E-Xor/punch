@@ -3,4 +3,8 @@ class ClockRecord < ActiveRecord::Base
   validates_presence_of :employee_id
   belongs_to :employee
 
+  def clocked_in?
+    clocked_in
+  end
+
 end

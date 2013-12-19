@@ -20,6 +20,8 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
+    Rails.logger.debug "Destroyed!"
+    redirect_to action: "index", status: 303
   end
 
 end

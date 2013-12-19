@@ -2,22 +2,4 @@
   <p class="punch-text"><%= @clock_record.clocked_in ? 'Hi' : 'Bye' %>, <%= @employee.first_name %> <%= @employee.last_name %>. You'successfully <b>clocked <%= @clock_record.clocked_in ? 'in' : 'out' %></b>. Today you worked: <%= @employee.today_hours %>.</p>
 </div>
 
-<% if @employee.is_admin? %>
-
-  <table class="punch-table">
-    <thead>
-      <tr><th>Employee ID</th><th>First Name</th><th>Last Name</th><th>Last 7 days hours</th></tr>
-    </thead>
-    <tbody>
-      <% @all_employees.each do |e| %>
-        <tr>
-          <td><%= e.employee_card_id %></td>
-          <td><%= e.first_name %></td>
-          <td><%= e.last_name %></td>
-          <td><%= e.seven_days_hours %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-<% end %>
+<%= render 'all_employees_hours' %>

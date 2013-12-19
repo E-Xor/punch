@@ -9,7 +9,7 @@
         <td><%= e.first_name %></td>
         <td><%= e.last_name %></td>
         <td><%= e.is_admin ? 'yes' : 'no' %></td>
-        <td><%= image_tag "trashcan.png" %></td>
+        <td><%= image_tag "trashcan.png", class: 'destroyEmployee', employee_id: e.id %></td>
       </tr>
     <% end %>
   </tbody>

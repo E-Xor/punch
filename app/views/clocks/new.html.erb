@@ -4,6 +4,6 @@
   <%= render 'clock_form' %>
 
   <% if flash[:alert] %>
-    <p class="punch-error">Error happend trying to clock you in/out. Please check your <b>Employee Card ID</b> or talk to support</p>
+    <p class="punch-error"><%= flash[:alert] %></p>
   <% end %>
 </div>
