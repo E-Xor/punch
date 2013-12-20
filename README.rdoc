@@ -8,8 +8,9 @@ As of now application assumes you never skip clock-in/out when you come/leave. I
 
 === Requirements
 
-1. MySQL
-2. You can run it as `rails s`, otherwise you need Apache/Nginx + Passanger/Unicorn
+1. RVM
+2. MySQL
+3. You can run it as `rails s`, otherwise you need Apache/Nginx + Passanger/Unicorn
 
 === Installation
 
@@ -19,6 +20,12 @@ As of now application assumes you never skip clock-in/out when you come/leave. I
   bundle exec rake db:create
   bundle exec rake db:migrate
   bundle exec rake db:seed
+
+=== Test
+
+  RAILS_ENV=test bundle exec rake db:create
+  RAILS_ENV=test bundle exec rake db:migrate
+  bundle exec rspec spec
 
 === Run
 
