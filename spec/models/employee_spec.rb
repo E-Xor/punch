@@ -30,7 +30,7 @@ describe Employee do
     create(:clock_record_in, employee_id: @employee.id)
     create(:clock_record_out, employee_id: @employee.id)
 
-    @employee.today_hours.should == "00:59:01" # 1 second + 59 minutes
+    @employee.today_hours.should == "00:59:01" # 1 second(not 2!) + 59 minutes
   end
 
   it 'should return hours worker for the last 7 days' do
@@ -45,7 +45,7 @@ describe Employee do
     create(:clock_record_in, employee_id: @employee.id)
     create(:clock_record_out, employee_id: @employee.id)
 
-    @employee.seven_days_hours.should == "01:00:02" # 1 minute + 2 seconds + 59 minutes
+    @employee.seven_days_hours.should == "01:00:02" # 1 minute(not 2!) + 2 seconds + 59 minutes
   end
 
 end
