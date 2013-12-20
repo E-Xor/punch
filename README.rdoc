@@ -29,6 +29,6 @@ As of now application assumes you never skip clock-in/out when you come/leave. I
 
 === Run
 
-  rails s
+  bundle exec rails s
 
 Or any other way you like it.

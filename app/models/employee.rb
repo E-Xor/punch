@@ -45,6 +45,8 @@ class Employee < ActiveRecord::Base
   def work_hours(start)
     total = 0
     last_clock_records = clock_records.where("created_at >= ?", start).order('created_at')
+
+    total = last_clock_records.first.created_at.localtime.to_i - start.to_i unless last_clock_records.first.clocked_in
     last_clock_records.each_with_index do |cr, i|
       next unless cr.clocked_in
 

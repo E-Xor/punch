@@ -77,7 +77,8 @@ describe "Create admin, clock in" do
     assert page.has_content?("Hi, #{employee.first_name}")
     assert page.has_content?("In")
     assert page.has_content?("Out")
-    # I assume
+
+    # I assume not more than 10 seconds
     time_diff = employee.clock_records.last.created_at.to_i - employee.clock_records.where(clocked_in: true).last.created_at.to_i
     assert page.has_content?("00:00:0#{time_diff}")
   end
