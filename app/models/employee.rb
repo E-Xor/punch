@@ -3,8 +3,16 @@ class Employee < ActiveRecord::Base
   validates_presence_of :employee_card_id, :first_name, :last_name
   has_many :clock_records
 
+  # Remeber:
+  # When you write using ActiveRecord it gets localtime, converts and saves it in UTC time
+  # When you search it gets localtime, converts and uses it in UTC
+  # When you read it retuns UTC time
+  # Time.now returns localtime
+  # 1.days.ago and similar return UTC time
+  # All calculations here should be made in localtime
+
   def seven_days_records
-    clock_records.where("created_at >= ?", 7.days.ago.beginning_of_day).order('created_at')
+    clock_records.where("created_at >= ?", 7.days.ago.localtime.beginning_of_day).order('created_at')
   end
 
   def today_hours
@@ -21,7 +29,7 @@ class Employee < ActiveRecord::Base
 
   private
 
-  def work_hours(start, include_days=false)
+  def work_hours(start)
     total = 0
     last_clock_records = clock_records.where("created_at >= ?", start).order('created_at')
     last_clock_records.each_with_index do |cr, i|
