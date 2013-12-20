@@ -123,7 +123,13 @@ ul.punch-nav-menu > li {
     border: 1px solid transparent;
 }
 
-ul.punch-nav-menu > li > a:hover {
+ul.punch-nav-menu > li > a:hover, ul.punch-nav-menu > li > a.punch-active-menu:hover {
+    color: #555555;
+    background-color: #b7b7b7;
+    border: 1px solid #a7a7a7;
+}
+
+ul.punch-nav-menu > li > a.punch-active-menu {
     color: #555555;
     background-color: #e7e7e7;
     border: 1px solid #b7b7b7;
