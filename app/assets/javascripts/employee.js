@@ -12,10 +12,14 @@ $(function(){
                     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
                 },
                 url: '/employees/' + id,
-                success: function(result) {
-                    if(result.isOk == false) { alert(result.message); }
+                success: function(data, status, xhr) {
+                    alert(data.message);
+                    window.location.replace("/employees");
                 },
-                async:   false
+                error: function(xhr, status, error) {
+                    alert('Error happened during employee deletion.');
+                    window.location.replace("/employees");
+                }
             });    
       }
     });

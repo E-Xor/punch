@@ -1,4 +1,3 @@
-# new admin -> clock in (with other users info)
 require 'spec_helper'
 
 describe "Create admin, clock in" do

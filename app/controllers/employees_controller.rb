@@ -21,7 +21,9 @@ class EmployeesController < ApplicationController
 
   def destroy
     Rails.logger.debug "Destroyed!"
-    redirect_to action: "index", status: 303
+    @employee = Employee.find(params[:id])
+    @employee.destroy
+    render json: {message: "#{@employee.first_name} #{@employee.last_name} was successfully removed"}
   end
 
 end

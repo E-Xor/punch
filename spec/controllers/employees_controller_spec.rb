@@ -39,5 +39,12 @@ describe EmployeesController do
   end
 
   describe "DELETE #destroy" do
+    it 'should successfully delete employee' do
+      employee = create(:employee)
+      delete :destroy, id: employee.id
+
+      response.body.should include(employee.first_name)
+      Employee.all.length.should == 0
+    end
   end
 end
