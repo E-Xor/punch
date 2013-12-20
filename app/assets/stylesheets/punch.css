@@ -70,7 +70,7 @@ body {
 
 .punch-error {
       font-size: 16px;
-      color: #a94442;  
+      color: #e62421;
 }
 
 .punch-table {
@@ -104,3 +104,27 @@ body {
     margin: 0 auto;
 }
 
+ul.punch-nav-menu {
+    background-color: #f8f8f8;
+    width: 100%;
+    border: 1px solid #d3d3d3;
+}
+
+ul.punch-nav-menu > li {
+    display: inline-block;
+}
+
+.punch-nav-menu > li > a {
+    color: #777777;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+ul.punch-nav-menu > li > a:hover {
+    color: #555555;
+    background-color: #e7e7e7;
+    border: 1px solid #b7b7b7;
+}
