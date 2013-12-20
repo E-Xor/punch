@@ -12,4 +12,5 @@ group :test, :development do
   gem 'rspec', '~> 2.13'
   gem 'rspec-rails', '~> 2.13'
   gem 'factory_girl_rails', '~> 4.3.0'
+  gem 'capybara', '~> 2.2.0'
 end

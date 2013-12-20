@@ -12,8 +12,13 @@
           <td><%= e.first_name %></td>
           <td><%= e.last_name %></td>
           <td><%= e.seven_days_hours %></td>
-          <td><%= last_clock_record.clocked_in ? 'In' : 'Out' %></td>
-          <td><%= last_clock_record.created_at.localtime.strftime('%c') %></td>
+          <% if last_clock_record %>
+            <td><%= last_clock_record.clocked_in ? 'In' : 'Out' %></td>
+            <td><%= last_clock_record.created_at.localtime.strftime('%c') %></td>
+          <% else %>
+            <td>N/A</td>
+            <td>N/A</td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
