@@ -27,6 +27,19 @@ class Employee < ActiveRecord::Base
     is_admin
   end
 
+  def last_work_hours
+    last_out = clock_records.where(clocked_in: false).last.created_at
+    last_work_seconds = last_out.to_i - clock_records.where('created_at <= ?', last_out).where(clocked_in: true).last.created_at.to_i rescue 0
+
+    mm, ss = last_work_seconds.divmod(60)
+    hh, mm = mm.divmod(60)
+
+    "%02d:%02d:%02d" % [hh, mm, ss]
+  rescue => e
+    Rails.logger.error "Error happened in last_work_hours:\n\t#{e.inspect}"
+    "N/A"
+  end
+
   private
 
   def work_hours(start)
@@ -44,5 +57,8 @@ class Employee < ActiveRecord::Base
     hh, mm = mm.divmod(60)
 
     "%02d:%02d:%02d" % [hh, mm, ss]
+  rescue => e
+    Rails.logger.error "Error happened in work_hours:\n\t#{e.inspect}"
+    "N/A"
   end
 end

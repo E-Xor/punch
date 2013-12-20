@@ -48,4 +48,12 @@ describe Employee do
     @employee.seven_days_hours.should == "01:00:02" # 1 minute(not 2!) + 2 seconds + 59 minutes
   end
 
+  it 'should return amount of hours worked last time' do
+    create(:clock_record_in, employee_id: @employee.id)
+    create(:clock_record_out, employee_id: @employee.id)
+    create(:clock_record_in, employee_id: @employee.id, created_at: Time.now)
+
+    puts @employee.last_work_hours.should == "00:59:00"
+  end
+
 end

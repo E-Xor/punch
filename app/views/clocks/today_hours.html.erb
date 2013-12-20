@@ -1,5 +1,5 @@
 <div class="punch-border" id="clockArea">
-  <p class="punch-text"><%= @clock_record.clocked_in ? 'Hi' : 'Bye' %>, <%= @employee.first_name %> <%= @employee.last_name %>. You'successfully <b>clocked <%= @clock_record.clocked_in ? 'in' : 'out' %></b>. Today you worked: <%= @employee.today_hours %>.</p>
+  <p class="punch-text"><%= @clock_record.clocked_in ? 'Hi' : 'Bye' %>, <%= @employee.first_name %> <%= @employee.last_name %>. You'successfully <b>clocked <%= @clock_record.clocked_in ? 'in' : 'out' %></b>. Last time you worked: <%= @employee.last_work_hours %> Today you worked: <%= @employee.today_hours %>. Now is <%= Time.now.strftime('%c') %>.</p>
 </div>
 
 <%= render 'all_employees_hours' %>
