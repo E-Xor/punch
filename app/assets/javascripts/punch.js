@@ -1,7 +1,7 @@
 $(function(){
 
   var $menuSelector = $("ul.punch-nav-menu > li > a");
-  if(window.location.path == '/employees') {
+  if(window.location.pathname == '/employees') {
     $($menuSelector[1]).addClass('punch-active-menu');
   }
   else {
